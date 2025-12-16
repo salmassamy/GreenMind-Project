@@ -1,100 +1,52 @@
-import logo from "../assets/logo.png";
-import instagram from "../assets/Instagram.png";
-import facebook from "../assets/Facebook.png";
-import twitter from "../assets/Twitter.png";
+import React from 'react';
+import logo from '../assets/logo.png'; 
+import facebookIcon from '../assets/Facebook.png';
+import instagramIcon from '../assets/Instagram.png';
+import twitterIcon from '../assets/Twitter.png';
 
 function Footer() {
   return (
-    <>
-      {/* Main Footer */}
-      <footer className="w-full bg-[#F7FEF4] flex justify-center">
-        <div className="w-[1440px] px-[56px] py-[80px] grid grid-cols-3 gap-[120px] text-[#4b5563]">
-          
-          {/* About */}
-          <div className="max-w-[320px]">
-            <img
-              src={logo}
-              alt="GreenMind Logo"
-              className="w-[100px] h-[100px] mb-[16px] object-contain"
-            />
-            <p className="text-[36px] leading-[44px]">
-              Supporting smart and sustainable agriculture. Providing seeds,
-              soil, and reliable growing solutions for all.
-            </p>
-          </div>
-
-          {/* Pages */}
-          <div>
-            <h3 className="text-[48px] font-semibold mb-[24px] text-[#6b3b2a]">
-              Pages
-            </h3>
-            <ul className="space-y-[12px] text-[36px]">
-              <li className="text-green-600">Home</li>
-              <li>Features</li>
-              <li>Products</li>
-              <li>Reviews</li>
-              <li>Why Us</li>
-              <li>About Us</li>
-              <li>Articles</li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-<div>
-  <h3 className="text-[48px] font-semibold mb-[24px] text-[#6b3b2a]">
-    Contact
-  </h3>
-
-  <ul className="space-y-[12px] text-[36px]">
-    <li>+201023456789</li>
-    <li>support@GreenMind.com</li>
-    <li>Al-Kaiman, Al-Fayoum - Egypt</li>
-  </ul>
-
-  {/* Social Icons */}
-  <div className="flex gap-[24px] mt-[24px]">
-    <a href="#" className="cursor-pointer">
-      <img
-        src={facebook}
-        alt="Facebook"
-        className="w-[49px] h-[48px]"
-      />
-    </a>
-
-    <a href="#" className="cursor-pointer">
-      <img
-        src={instagram}
-        alt="Instagram"
-        className="w-[49px] h-[48px]"
-      />
-    </a>
-
-    <a href="#" className="cursor-pointer">
-      <img
-        src={twitter}
-        alt="Twitter"
-        className="w-[49px] h-[48px]"
-      />
-    </a>
-  </div>
-</div>
-
-
+    <footer className="main-footer">
+      
+      <div className="footer-content">
+        
+        <div className="footer-section logo-section">
+          <a href="/" className="footer-logo-link">
+             <img src={logo} alt="GreenMind Logo" className="footer-logo-img" /> 
+          </a>
+          <p>Supporting smart and sustainable agriculture.</p>
+          <p>Providing seeds, soil, and reliable growing solutions for all.</p>
         </div>
-      </footer>
 
-      {/* Bottom Bar */}
-      <div className="w-full bg-[#E3D1C8] flex justify-center">
-        <div className="w-[1440px] h-[153px] flex items-center justify-center">
-          <p className="text-[36px] text-white/80">
-            Created by{" "}
-            <span className="font-semibold text-white">TEAM NAME</span> | all
-            rights reserved by EELU
-          </p>
+        <div className="footer-section">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/features">Features</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/reviews">Reviews</a></li>
+            <li><a href="/why-us">Why Us</a></li>
+            <li ><a href="/articles">Articles</a></li>
+          </ul>
+        </div>
+
+        <div className="footer-section">
+          <h4>Contact</h4>
+          <p>+201023456789</p>
+          <p>support@GreenMind.com</p>
+          <p>Al-Kaiman, Al-Fayoum-Egypt</p>
+          <div className="social-icons">
+            <img src={facebookIcon} alt="Facebook" className="social-icon-img" />
+            <img src={instagramIcon} alt="Instagram" className="social-icon-img" />
+            <img src={twitterIcon} alt="Twitter" className="social-icon-img" />
+          </div>
         </div>
       </div>
-    </>
+      
+      <div className="footer-bottom">
+        <p>Created by TEAM NAME | all rights reserved by EELU</p>
+      </div>
+    </footer>
   );
 }
-
 export default Footer;

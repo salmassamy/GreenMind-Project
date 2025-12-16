@@ -1,0 +1,53 @@
+@import url('./variables.css');
+
+.main-header {
+    background-color: var(--color-header-footer-bg); 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 5px 30px; 
+}
+
+.logo-link {
+    display: inline-block; 
+    transition: transform 0.3s ease, opacity 0.3s;
+}
+
+.logo-link:hover {
+    transform: scale(1.05); 
+    opacity: 0.9; 
+}
+
+.header-logo {
+    width: 80px; 
+    height: 80px;
+    display: block; 
+}
+
+.main-nav ul {
+    list-style: none; 
+    display: flex;
+    gap: 25px; 
+}
+
+.main-nav a {
+    text-decoration: none; 
+    color: var(--color-text); 
+    font-size: var(--font-size-large); 
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--color-primary); 
+}
+
+.user-access {
+    /* تنسيق الآيكون */
+}
+
+.user-icon-img {
+    width: 40px; 
+    height: 40px;
+    cursor: pointer;
+}

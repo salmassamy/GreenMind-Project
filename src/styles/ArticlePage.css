@@ -1,0 +1,110 @@
+@import url('./variables.css');
+
+.article-page-layout {
+    max-width: 1200px;
+margin: 40px auto; 
+padding: 0 20px;
+text-align: center; 
+background-color: var(--color-background); 
+}
+
+.page-title {
+font-size: var(--font-size-h2); 
+font-weight: 800; 
+color: var(--color-secondary); 
+margin-bottom: 5px;
+filter: drop-shadow(4px 0px 4px rgba(0, 0, 0, 0.25)); 
+}
+
+.page-subtitle {
+font-size: var(--font-size-base); 
+font-weight: 400; 
+color: var(--color-text-light);
+margin-bottom: 50px;
+}
+
+.article-section-title {
+margin-top: 50px;
+margin-bottom: 5px; 
+}
+
+.article-section-subtitle {
+font-size: var(--font-size-base); 
+color: var(--color-text-light);
+margin-bottom: 30px; 
+}
+
+.articles-grid {
+display: grid;
+grid-template-columns: 1fr 1fr; 
+max-width: 800px; 
+margin: 0 auto;
+gap: 30px; 
+justify-items: center; 
+}
+
+.featured-today-box {
+background-color: var(--color-header-footer-bg); 
+max-width: 800px; 
+margin: 40px auto; 
+border-radius: 8px;
+overflow: hidden; 
+
+display: flex;
+flex-direction: column;
+padding: 0; 
+height: auto; 
+ 
+box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); 
+}
+
+.featured-main-title {
+text-align: center;
+font-size: var(--font-size-h3);
+font-weight: bold;
+color: var(--color-brown-text); 
+padding: 20px 20px 15px; 
+margin: 0;
+}
+
+.featured-image-wrapper {
+width: 100%;
+height: 350px; 
+overflow: hidden;
+}
+
+.featured-image-wrapper img {
+width: 100%;
+height: 100%;
+object-fit: cover; 
+display: block;
+}
+
+.featured-bottom-content {
+background-color: var(--color-light-brown); 
+padding: 30px 40px; 
+text-align: center;
+}
+
+.featured-bottom-content p {
+font-size: var(--font-size-base);
+color: var(--color-text-light); 
+margin-bottom: 20px; 
+}
+
+.read-more-featured {
+background-color: var(--color-secondary);
+color: white;
+padding: 8px 20px;
+text-decoration: none;
+border-radius: 4px;
+margin-top: 10px;
+margin-bottom: 5px;
+display: inline-block;
+font-size: var(--font-size-button); 
+transition: background-color 0.3s;
+}
+
+.read-more-featured:hover {
+background-color: var(--color-secondary-light);
+}

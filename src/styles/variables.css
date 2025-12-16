@@ -1,0 +1,42 @@
+:root {
+  /* ==================== 1. GreenMind Colors ==================== */
+  --color-primary: #4CAF50;    
+  --color-primary-dark: #388E3C; 
+  --color-secondary: #683A2F;   
+  --color-secondary-light: #A57268; 
+
+  /* ==================== 2. Backgrounds & Text ==================== */
+  
+  --color-background: #F7FEF4; 
+  --color-header-footer-bg: #D9BDB4; 
+  --color-light-bg: #FFFFFF; 
+  
+  --color-text: #683A2F;       
+  --color-text-light: #4B4B4B; 
+  --color-header-bg: transparent; 
+  
+  /* ==================== 3. Typography ( H1-H6) ==================== */
+
+  --font-family-primary: 'Inter', sans-serif; 
+
+  /* H1: 56px - عنوان الصفحة الرئيسي */
+  --font-size-h1: 56px;
+
+  /* H2: 48px - عنوان قسم كبير (مثل Article) */
+  --font-size-h2: 48px; 
+  
+  /* H3: 28px - عنوان العنصر (مثل عنوان المقال) */
+  --font-size-h3: 28px; 
+  
+  /* H4: 24px - عناوين فرعية */
+  --font-size-h4: 24px; 
+
+  /* H5 / Body: 18px - النص الأساسي لسهولة القراءة والوصف */
+  --font-size-base: 18px; 
+  
+  /* H6 / Button: 20px - نص الأزرار */
+  --font-size-button: 20px; 
+  
+  /* حجم روابط الـ Header والآيقونات */
+  --font-size-large: 20px; 
+}

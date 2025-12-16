@@ -5,8 +5,8 @@ import articleImage from '../assets/Article Image.png';
 
 const ARTICLES_DATA = [
  { id: 1, title: "How Technology Helps Farmers Grow Smarter?", description: "The world's farmers are racing to adapt to the changing climate. More extreme floods and droughts are interrupting production and eroding soil quality.", link: "#", imageUrl: articleImage },
- { id: 2, title: "Why AI is the Best Tool for Predicting Wheat's Nitrogen Needs.", description: "A detailed look into how machine learning models can accurately predict nutrient requirements, optimizing yield and reducing waste.", link: "#", imageUrl: articleImage },
- { id: 3, title: "Learn easy ways to protect soil, save water, and grow sustainably.", description: "Simple, practical tips for the modern farmer to enhance sustainability and ensure long-term productivity of their land.", link: "#", imageUrl: articleImage },
+ { id: 2, title: "How Technology Helps Farmers Grow Smarter?", description: "The world's farmers are racing to adapt to the changing climate. More extreme floods and droughts are interrupting production and eroding soil quality.", link: "#", imageUrl: articleImage },
+ { id: 3, title: "How Technology Helps Farmers Grow Smarter?", description: "The world's farmers are racing to adapt to the changing climate. More extreme floods and droughts are interrupting production and eroding soil quality.", link: "#", imageUrl: articleImage },
 ];
 
 function ArticlePage() {

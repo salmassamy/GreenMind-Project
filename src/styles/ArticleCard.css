@@ -7,7 +7,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
     transition: transform 0.3s;
     max-width: 350px; 
-    /* 💡 جعل محاذاة النص الأساسية لليسار */
     text-align: left; 
 }
 
@@ -28,14 +27,12 @@
 
 .card-content {
     padding: 20px;
-    /* 💡 استخدام flex لترتيب العناصر عمودياً من جهة اليسار */
     display: flex;
     flex-direction: column;
     align-items: flex-start; 
 }
 
 .card-title {
-    /* 💡 استخدام اللون البني الموحد لعناوين الموقع */
     font-size: var(--font-size-h3); 
     font-weight: bold;
     color: var(--color-brown-text);
@@ -49,7 +46,7 @@
     color: var(--color-text-light);
     line-height: 1.4;
     margin-bottom: 20px;
-    text-align: left; /* لضمان بداية النص من اليسار */
+    text-align: left; 
 }
 
 .read-more-button {
@@ -62,7 +59,6 @@
     border-radius: 4px;
     display: inline-block;
     transition: background-color 0.3s;
-    /* 💡 ضمان محاذاة الزرار لليسار داخل الـ Flexbox */
     align-self: flex-start; 
 }
 

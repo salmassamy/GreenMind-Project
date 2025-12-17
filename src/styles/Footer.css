@@ -92,7 +92,9 @@
 .footer-bottom {
     background-color: var(--color-header-footer-bg); 
     text-align: center;
-    padding: 15px 0;
-    font-size: 0.85em;
+    padding: 30px 0;
+    font-size: 0.9em;
     color: var(--color-secondary); 
+    width: 100%;
+    margin-top: 0;
 }

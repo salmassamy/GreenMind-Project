@@ -3,9 +3,9 @@ import ArticleCard from '../components/ArticleCard';
 import articleImage from '../assets/Article Image.png'; 
 
 const ARTICLES_DATA = [
- { id: 1, title: "How Technology Helps Farmers Grow Smarter?", description: "The world's farmers are racing to adapt to the changing climate. More extreme floods and droughts are interrupting production and eroding soil quality.", link: "#", imageUrl: articleImage },
- { id: 2, title: "How Technology Helps Farmers Grow Smarter?", description: "The world's farmers are racing to adapt to the changing climate. More extreme floods and droughts are interrupting production and eroding soil quality.", link: "#", imageUrl: articleImage },
- { id: 3, title: "How Technology Helps Farmers Grow Smarter?", description: "The world's farmers are racing to adapt to the changing climate. More extreme floods and droughts are interrupting production and eroding soil quality.", link: "#", imageUrl: articleImage },
+ { id: 1, title: "How Technology Helps Farmers Grow Smarter?", description: "Description text here...", link: "#", imageUrl: articleImage },
+ { id: 2, title: "How Technology Helps Farmers Grow Smarter?", description: "Description text here...", link: "#", imageUrl: articleImage },
+ { id: 3, title: "How Technology Helps Farmers Grow Smarter?", description: "Description text here...", link: "#", imageUrl: articleImage },
 ];
 
 function ArticlePage() {
@@ -18,7 +18,7 @@ function ArticlePage() {
     <div className="featured-today-box"> 
         <h3 className="featured-main-title">FEATURED TODAY</h3>
         <div className="featured-image-wrapper">
-            <img src={articleImage} alt="Featured Article" className="featured-image" />
+            <img src={articleImage} alt="Featured Article" />
         </div>
         <div className="featured-bottom-content">
             <p>Learn easy ways to protect soil, save water, and grow sustainably.</p>
@@ -27,7 +27,7 @@ function ArticlePage() {
     </div>
 
     <h2 className="readers-choice-title">Article</h2>
-    <p className="readers-choice-subtitle">This month's most popular article is: "Why AI is the Best Tool for Predicting Wheat's Nitrogen Needs."</p>
+    <p className="readers-choice-subtitle">Discover our latest insights on modern farming technology.</p>
 
     <div className="articles-grid">
         {ARTICLES_DATA.map(article => (

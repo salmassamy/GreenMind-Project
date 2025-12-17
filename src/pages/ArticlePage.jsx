@@ -3,9 +3,9 @@ import ArticleCard from '../components/ArticleCard';
 import articleImage from '../assets/Article Image.png'; 
 
 const ARTICLES_DATA = [
- { id: 1, title: "How Technology Helps Farmers Grow Smarter?", description: "Description text here...", link: "#", imageUrl: articleImage },
- { id: 2, title: "How Technology Helps Farmers Grow Smarter?", description: "Description text here...", link: "#", imageUrl: articleImage },
- { id: 3, title: "How Technology Helps Farmers Grow Smarter?", description: "Description text here...", link: "#", imageUrl: articleImage },
+ { id: 1, title: "How Technology Helps Farmers Grow Smarter?", description: "The world’s farmers are racing to adapt to the changing climate. More extreme floods and droughts are interrupting production and eroding soil quality.", link: "#", imageUrl: articleImage },
+ { id: 2, title: "How Technology Helps Farmers Grow Smarter?", description: "The world’s farmers are racing to adapt to the changing climate. More extreme floods and droughts are interrupting production and eroding soil quality.", link: "#", imageUrl: articleImage },
+ { id: 3, title: "How Technology Helps Farmers Grow Smarter?", description: "The world’s farmers are racing to adapt to the changing climate. More extreme floods and droughts are interrupting production and eroding soil quality.", link: "#", imageUrl: articleImage },
 ];
 
 function ArticlePage() {
@@ -26,7 +26,8 @@ function ArticlePage() {
         </div>
     </div>
 
-    <h2 className="readers-choice-title">Article</h2>
+    {/* 💡 ضفنا كلاس إضافي هنا للتحكم الأكبر في الحجم */}
+    <h2 className="readers-choice-title main-section-title">Article</h2>
     <p className="readers-choice-subtitle">Discover our latest insights on modern farming technology.</p>
 
     <div className="articles-grid">

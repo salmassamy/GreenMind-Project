@@ -26,7 +26,6 @@ function ArticlePage() {
         </div>
     </div>
 
-    {/* 💡 ضفنا كلاس إضافي هنا للتحكم الأكبر في الحجم */}
     <h2 className="readers-choice-title main-section-title">Article</h2>
     <p className="readers-choice-subtitle">Discover our latest insights on modern farming technology.</p>
 

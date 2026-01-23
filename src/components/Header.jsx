@@ -1,34 +1,57 @@
+
 import React from 'react';
 import logo from '../assets/logo.png'; 
-import userIconImage from '../assets/User.png'; 
+import menuIcon from '../assets/Menu.png'; 
 
-function Header() {
+const Header = () => {
   return (
-    <header className="main-header">
-      <div className="logo">
-        <a href="/" className="logo-link"> 
-          <img src={logo} alt="GreenMind Logo" className="header-logo" /> 
-        </a>
-      </div>
+    <header className="bg-[#E3D1C8] sticky top-0 w-full z-50 shadow-sm h-20 flex items-center font-inter">
+      
+      <div className="max-w-[1440px] mx-auto w-full px-10 flex justify-between items-center">
+        
+        <div className="flex items-center cursor-pointer">
+          <img 
+            src={logo} 
+            alt="GreenMind Logo" 
+            className="w-14 h-14 object-contain" 
+          />
+        </div>
 
-      <nav className="main-nav">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/features">Features</a></li>
-          <li><a href="/products">Products</a></li>
-          <li><a href="/reviews">Reviews</a></li>
-          <li><a href="/why-us">Why Us</a></li>
-        </ul>
-      </nav>
+        <nav className="hidden md:flex space-x-12 text-[#683A2F] text-[18px] tracking-widest ">
+          
+          <a href="/" className="font-semibold transition-all duration-300 hover:font-bold hover:opacity-60 no-underline">
+            Home
+          </a>
 
-      <div className="user-access">
-        <img 
-            src={userIconImage} 
-            alt="User Profile" 
-            className="user-icon-img" 
-        />
+          <a href="/articles" className="font-bold opacity-60 no-underline cursor-default">
+            Articles
+          </a>
+
+          <a href="/About Us" className="font-semibold transition-all duration-300 hover:font-bold hover:opacity-60 no-underline">
+            About Us
+          </a>
+          <a href="/features" className="font-semibold transition-all duration-300 hover:font-bold hover:opacity-60 no-underline">
+            Features
+          </a>
+          <a href="/products" className="font-semibold transition-all duration-300 hover:font-bold hover:opacity-60 no-underline">
+            Products
+          </a>         
+          <a href="/FAQ" className="font-semibold transition-all duration-300 hover:font-bold hover:opacity-60 no-underline">
+            FAQ
+          </a>
+        </nav>
+
+        <div className="flex items-center cursor-pointer group">
+          <img 
+            src={menuIcon} 
+            alt="Menu" 
+            className="w-10 h-auto object-contain transition-all duration-300 group-hover:opacity-60" 
+          />
+        </div>
+
       </div>
     </header>
   );
-}
+};
+
 export default Header;

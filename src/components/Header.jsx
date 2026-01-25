@@ -1,124 +1,99 @@
-
-// import React from 'react';
-// import logo from '../assets/logo.png'; 
-// import menuIcon from '../assets/Menu.png'; 
-
-// const Header = () => {
-//   return (
-//     <header className="bg-[#E3D1C8] sticky top-0 w-full z-50 shadow-sm h-20 flex items-center font-inter">
-      
-//       <div className="max-w-[1440px] mx-auto w-full px-10 flex justify-between items-center">
-        
-//         <div className="flex items-center cursor-pointer">
-//           <img 
-//             src={logo} 
-//             alt="GreenMind Logo" 
-//             className="w-14 h-14 object-contain" 
-//           />
-//         </div>
-
-//         <nav className="hidden md:flex space-x-12 text-[#683A2F] text-[18px] tracking-widest ">
-          
-//           <a href="/" className="font-semibold transition-all duration-300 hover:font-bold hover:opacity-60 no-underline">
-//             Home
-//           </a>
-
-//           <a href="/articles" className="font-bold opacity-60 no-underline cursor-default">
-//             Articles
-//           </a>
-
-//           <a href="/About Us" className="font-semibold transition-all duration-300 hover:font-bold hover:opacity-60 no-underline">
-//             About Us
-//           </a>
-//           <a href="/features" className="font-semibold transition-all duration-300 hover:font-bold hover:opacity-60 no-underline">
-//             Features
-//           </a>
-//           <a href="/products" className="font-semibold transition-all duration-300 hover:font-bold hover:opacity-60 no-underline">
-//             Products
-//           </a>         
-//           <a href="/FAQ" className="font-semibold transition-all duration-300 hover:font-bold hover:opacity-60 no-underline">
-//             FAQ
-//           </a>
-//         </nav>
-
-//         <div className="flex items-center cursor-pointer group">
-//           <img 
-//             src={menuIcon} 
-//             alt="Menu" 
-//             className="w-10 h-auto object-contain transition-all duration-300 group-hover:opacity-60" 
-//           />
-//         </div>
-
-//       </div>
-//     </header>
-//   );
-// };
-
-// export default Header;
-
-
-
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from '../assets/logo.png'; 
 import menuIcon from '../assets/Menu.png'; 
 
 const Header = () => {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); 
 
   useEffect(() => {
     setCurrentPath(window.location.pathname);
   }, []);
 
-  const linkBaseStyles = "transition-all duration-300 hover:font-bold hover:opacity-100 no-underline";
+  const links = [
+    { name: 'Home', path: '/' },
+    { name: 'Articles', path: '/articles' },
+    { name: 'About Us', path: '/about' },
+    { name: 'Features', path: '/features' },
+    { name: 'Products', path: '/products' },
+    { name: 'FAQ', path: '/faq' },
+  ];
 
-  const isActive = (path) => {
-    return currentPath === path || currentPath === `${path}/`;
-  };
+  const isActive = (path) => currentPath === path || currentPath === `${path}/`;
+
+  // ستايل اللينكات الموحد (اللون البني المعتمد)
+  const linkStyles = "text-[18px] text-[#683A2F] no-underline transition-all duration-300 tracking-widest";
 
   return (
-    <header className="bg-[#E3D1C8] sticky top-0 w-full z-50 shadow-sm h-16 flex items-center font-inter">
-      <div className="max-w-[1440px] mx-auto w-full px-10 flex justify-between items-center">
+    <header className="bg-[#E3D1C8] sticky top-0 w-full z-50 shadow-sm font-inter">
+      <div className="max-w-[1440px] mx-auto h-16 px-5 md:px-10 flex justify-between items-center relative">
         
+        {/* اللوجو: ثابت في مكانه */}
         <div className="flex items-center cursor-pointer">
-          <img src={logo} alt="GreenMind Logo" className="w-12 h-12 object-contain" />
+          <img src={logo} alt="Logo" className="w-10 h-10 md:w-12 md:h-12 object-contain" />
         </div>
 
-        <nav className="hidden md:flex space-x-12 text-[#683A2F] text-[18px] tracking-widest">
-          <a href="/" 
-             className={`${linkBaseStyles} ${isActive('/') ? 'font-bold opacity-100' : 'font-semibold opacity-85'}`}>
-            Home
-          </a>
-
-          <a href="/articles" 
-             className={`${linkBaseStyles} ${isActive('/articles') ? 'font-bold opacity-100' : 'font-semibold opacity-85'}`}>
-            Articles
-          </a>
-
-          <a href="/about" 
-             className={`${linkBaseStyles} ${isActive('/about') ? 'font-bold opacity-100' : 'font-semibold opacity-85'}`}>
-            About Us
-          </a>
-
-          <a href="/features" 
-             className={`${linkBaseStyles} ${isActive('/features') ? 'font-bold opacity-100' : 'font-semibold opacity-85'}`}>
-            Features
-          </a>
-
-          <a href="/products" 
-             className={`${linkBaseStyles} ${isActive('/products') ? 'font-bold opacity-100' : 'font-semibold opacity-85'}`}>
-            Products
-          </a>         
-
-          <a href="/faq" 
-             className={`${linkBaseStyles} ${isActive('/faq') ? 'font-bold opacity-100' : 'font-semibold opacity-85'}`}>
-            FAQ
-          </a>
+        {/* روابط الديسكتوب: بني، عريض للنشط، وتحته خط */}
+        <nav className="hidden md:flex space-x-8">
+          {links.map((link) => (
+            <a 
+              key={link.path}
+              href={link.path} 
+              className={`${linkStyles} hover:font-bold ${
+                isActive(link.path) 
+                  ? 'font-bold border-b-2 border-[#683A2F] pb-1 opacity-100' 
+                  : 'font-semibold opacity-80'
+              }`}
+            >
+              {link.name}
+            </a>
+          ))}
         </nav>
 
-        <div className="flex items-center cursor-pointer group">
-          <img src={menuIcon} alt="Menu" className="w-8 h-auto object-contain opacity-80" />
-        </div>
+        {/* أيقونة المنيو والمنيو المنبثقة */}
+        <div className="relative">
+          <div 
+            className="flex items-center cursor-pointer ml-4" 
+            onClick={() => setIsMenuOpen(!isMenuOpen)} 
+          >
+            <img src={menuIcon} alt="Menu" className="w-8 h-auto opacity-80 hover:opacity-100 transition-opacity" />
+          </div>
 
+          {/* المنيو المنبثقة: تظهر تحت الأيقونة في الديسكتوب والموبايل */}
+          <div 
+            className={`absolute right-0 mt-4 w-56 bg-[#E3D1C8] shadow-2xl rounded-xl overflow-hidden transition-all duration-300 z-[100] ${
+              isMenuOpen ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-4 scale-95 pointer-events-none'
+            }`}
+          >
+            <nav className="flex flex-col p-4 space-y-2">
+               {links.map((link) => (
+                <a
+                  key={link.path}
+                  href={link.path}
+                  // اللينك النشط واخد ظل (خلفية) ثابتة و Bold بدون خط جانبي
+                  className={`${linkStyles} py-2 px-3 rounded-lg hover:font-bold hover:bg-[#683A2F]/10 ${
+                    isActive(link.path) 
+                      ? 'font-bold opacity-100 bg-[#683A2F]/10' 
+                      : 'font-semibold opacity-80'
+                  }`}
+                >
+                  {link.name}
+                </a>
+              ))}
+              
+              {/* خط فاصل خفيف */}
+              <div className="h-[1px] bg-[#683A2F]/10 my-2"></div>
+
+              {/* سكشن الحساب: Logout بلون وسمك طبيعي */}
+              <button className={`${linkStyles} py-2 px-3 text-left w-full hover:font-bold hover:bg-[#683A2F]/10 font-semibold opacity-80`}>
+                Profile
+              </button>
+              <button className={`${linkStyles} py-2 px-3 text-left w-full hover:font-bold hover:bg-[#683A2F]/10 font-semibold opacity-80`}>
+                Logout
+              </button>
+            </nav>
+          </div>
+        </div>
       </div>
     </header>
   );

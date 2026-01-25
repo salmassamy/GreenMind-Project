@@ -6,7 +6,7 @@ import googleIcon from '../assets/Google.png';
 import facebookIcon from '../assets/Facebook.png';
 import xTwitterIcon from '../assets/X-Twitter.png'; 
 
-const SignUp = () => {
+const Login = () => {
   const navigate = useNavigate();
 
   return (
@@ -21,10 +21,10 @@ const SignUp = () => {
         <div className="text-white flex-[0.4] flex flex-col items-center justify-center text-center md:text-left md:items-start mb-10 md:mb-0">
           <div className="flex flex-col items-center"> 
             <h1 className="font-bold italic leading-tight text-white drop-shadow-lg text-[48px] md:text-[64px]">
-              Create Account
+              Welcome Back
             </h1>
             <p className="font-medium text-white mt-[-5px] text-[20px] md:text-[24px]">
-              Join our community
+              Glad to see you again
             </p>
           </div>
         </div>
@@ -52,25 +52,39 @@ const SignUp = () => {
 
             <form className="w-full flex flex-col items-center">
               <div className="w-full space-y-4">
-                <input type="text" placeholder="User Name" style={{ backgroundColor: 'rgba(217, 217, 217, 0.38)' }} className="w-full border-none rounded-full py-3 px-8 text-white placeholder-white outline-none text-center focus:ring-1 focus:ring-white/30" />
-                <input type="email" placeholder="Email Address" style={{ backgroundColor: 'rgba(217, 217, 217, 0.38)' }} className="w-full border-none rounded-full py-3 px-8 text-white placeholder-white outline-none text-center focus:ring-1 focus:ring-white/30" />
-                <input type="password" placeholder="Password" style={{ backgroundColor: 'rgba(217, 217, 217, 0.38)' }} className="w-full border-none rounded-full py-3 px-8 text-white placeholder-white outline-none text-center focus:ring-1 focus:ring-white/30" />
-                <input type="password" placeholder="Confirm Password" style={{ backgroundColor: 'rgba(217, 217, 217, 0.38)' }} className="w-full border-none rounded-full py-3 px-8 text-white placeholder-white outline-none text-center focus:ring-1 focus:ring-white/30" />
+                <input 
+                  type="email" 
+                  placeholder="User Name or Email" 
+                  style={{ backgroundColor: 'rgba(217, 217, 217, 0.38)' }}
+                  className="w-full border-none rounded-full py-3 px-8 text-white placeholder-white outline-none text-center focus:ring-1 focus:ring-white/30" 
+                />
+                <input 
+                  type="password" 
+                  placeholder="Password" 
+                  style={{ backgroundColor: 'rgba(217, 217, 217, 0.38)' }}
+                  className="w-full border-none rounded-full py-3 px-8 text-white placeholder-white outline-none text-center focus:ring-1 focus:ring-white/30" 
+                />
               </div>
-              
-              <div className="w-full flex items-center gap-2 text-white text-[11px] px-4 py-2 mt-1">
-                <input type="checkbox" id="terms" className="w-3.5 h-3.5 accent-[#4CAF50] cursor-pointer" />
-                <label htmlFor="terms" className="cursor-pointer opacity-90">I accept the terms and Privacy Policy</label>
+
+              <div className="flex gap-10 my-6 text-white text-lg">
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input type="radio" name="role" className="w-4 h-4 accent-[#4CAF50] cursor-pointer" />
+                  User
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input type="radio" name="role" className="w-4 h-4 accent-[#4CAF50] cursor-pointer" />
+                  Admin
+                </label>
               </div>
 
               <button className="w-[70%] hover:brightness-110 cursor-pointer text-white font-bold py-3 text-xl shadow-lg transition-all mt-4 transform active:scale-95 shadow-[#4CAF50]/20" style={{ backgroundColor: '#4CAF50', borderRadius: '60px' }}>
-                Sign Up
+                Log In
               </button>
             </form>
 
             <div className="w-full flex items-center my-6">
               <div className="flex-grow border-t border-white/20"></div>
-              <span className="px-3 text-white/50 text-[9px] uppercase tracking-widest font-medium">Or Sign up with</span>
+              <span className="px-3 text-white/50 text-[9px] uppercase tracking-widest font-medium">Or Log in with</span>
               <div className="flex-grow border-t border-white/20"></div>
             </div>
 
@@ -81,7 +95,7 @@ const SignUp = () => {
             </div>
 
             <p className="text-white/70 text-[11px]">
-              Already have account? <button onClick={() => navigate('/login')} className="font-bold text-white underline italic ml-1 cursor-pointer">Log in Now</button>
+              Don't have account? <button onClick={() => navigate('/signup')} className="font-bold text-white underline italic ml-1 cursor-pointer">Create Now</button>
             </p>
           </div>
         </div>
@@ -90,4 +104,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Login;

@@ -1,9 +1,10 @@
-
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import logo from '../assets/logo.png'; 
 import menuIcon from '../assets/Menu.png'; 
 
 const Header = () => {
+  const navigate = useNavigate(); 
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
 
@@ -28,7 +29,7 @@ const Header = () => {
     <header className="bg-[#E3D1C8] sticky top-0 w-full z-50 shadow-sm font-inter">
       <div className="max-w-[1440px] mx-auto h-16 px-5 md:px-10 flex justify-between items-center relative">
         
-        <div className="flex items-center cursor-pointer">
+        <div className="flex items-center cursor-pointer" onClick={() => navigate('/')}>
           <img src={logo} alt="Logo" className="w-10 h-10 md:w-12 md:h-12 object-contain" />
         </div>
 
@@ -78,11 +79,18 @@ const Header = () => {
                 ))}
                 <div className="h-[1px] bg-[#683A2F]/10 my-2"></div>
                </div>
-              
+        
+
                <button className={`${linkStyles} py-2 px-3 text-left w-full hover:font-bold hover:bg-[#683A2F]/10 font-semibold opacity-80`}>
                  Profile
                </button>
-               <button className={`${linkStyles} py-2 px-3 text-left w-full hover:font-bold hover:bg-[#683A2F]/10 font-semibold opacity-80 text-red-700`}>
+               <button 
+                onClick={() => { navigate('/selection'); setIsMenuOpen(false); }} 
+                className={`${linkStyles} py-2 px-3 text-left w-full hover:font-bold hover:bg-[#683A2F]/10 font-semibold opacity-80`}
+               >
+                 Sign Up
+               </button>
+               <button className={`${linkStyles} py-2 px-3 text-left w-full hover:font-bold hover:bg-[#683A2F]/10 font-semibold opacity-80`}>
                  Logout
                </button>
             </nav>

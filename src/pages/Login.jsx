@@ -23,9 +23,9 @@ const Login = () => {
             <h1 className="font-bold italic leading-tight text-white drop-shadow-lg text-[48px] md:text-[64px]">
               Welcome Back
             </h1>
-            <p className="font-medium text-white mt-[-5px] text-[20px] md:text-[24px]">
+            {/* <p className="font-medium text-white mt-[-5px] text-[20px] md:text-[24px]">
               Glad to see you again
-            </p>
+            </p> */}
           </div>
         </div>
 

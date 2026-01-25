@@ -1,7 +1,7 @@
 
 
 import React from 'react';
-import fbIcon from '../assets/Facebook.png';
+import fbIcon from '../assets/Brown-Facebook.png';
 import igIcon from '../assets/Instagram.png';
 import twIcon from '../assets/Twitter.png';
 import logo from '../assets/logo.png';
@@ -46,7 +46,7 @@ const Footer = () => {
               
               <div className="flex space-x-6 pt-6">
                 <a href="#" className="hover:scale-110 transition-transform">
-                  <img src={fbIcon} alt="Facebook" className="w-10 h-10 object-contain" />
+                  <img src={fbIcon} alt="Brown-Facebook" className="w-10 h-10 object-contain" />
                 </a>
                 <a href="#" className="hover:scale-110 transition-transform">
                   <img src={igIcon} alt="Instagram" className="w-10 h-10 object-contain" />

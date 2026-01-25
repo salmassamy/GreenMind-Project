@@ -33,11 +33,11 @@ const SelectionEntry = () => {
         }}
       >
         <h1 className="text-white text-[42px] md:text-[50px] font-bold italic mb-12 text-center font-inter drop-shadow-md">
-          Welcome Back
+          Create Account
         </h1>
         
         <div className="flex items-center justify-center space-x-10 text-white text-[20px] md:text-[24px] font-inter">
-          <span className="opacity-90">Log in as:</span>
+          <span className="opacity-90">Sign up as:</span>
           
           <div onClick={() => handleSelect('user')} className="flex items-center cursor-pointer group">
             <div className={`w-5 h-5 rounded-full border-2 transition-all duration-300 mr-2 ${selectedRole === 'user' ? 'bg-[#A0443B] border-[#A0443B]' : 'bg-transparent border-white'}`}></div>

@@ -8,14 +8,20 @@ const SelectionEntry = () => {
 
   const handleSelect = (role) => {
     setSelectedRole(role);
+    
+    // التعديل: توجيه الآدمن للوجن واليوزر للساين أب
     setTimeout(() => {
-      navigate('/signup', { state: { role } });
+      if (role === 'admin') {
+        navigate('/login', { state: { role } });
+      } else {
+        navigate('/signup', { state: { role } });
+      }
     }, 600);
   };
 
   return (
     <div 
-      className="relative min-h-screen w-full flex items-center justify-center bg-cover bg-center overflow-hidden"
+      className="relative min-h-screen w-full flex items-center justify-center bg-cover bg-center overflow-hidden font-inter"
       style={{ backgroundImage: `url(${authBg})` }}
     >
       <div 
@@ -32,11 +38,13 @@ const SelectionEntry = () => {
           boxShadow: 'inset 0 4px 4px rgba(0, 0, 0, 0.25)', 
         }}
       >
-        <h1 className="text-white text-[42px] md:text-[50px] font-bold italic mb-12 text-center font-inter drop-shadow-md">
-          Create Account
+        {/* H1 - تم تعديله ليصبح 56px بوزن Extra Bold (900) حسب الجدول */}
+        <h1 className="text-white text-[56px] font-[900] italic mb-12 text-center drop-shadow-md">
+          Welcome
         </h1>
         
-        <div className="flex items-center justify-center space-x-10 text-white text-[20px] md:text-[24px] font-inter">
+        {/* نصوص الجسم - تم تعديلها لتصبح 18px بوزن Regular (400) حسب الجدول */}
+        <div className="flex items-center justify-center space-x-10 text-white text-[18px] font-normal">
           <span className="opacity-90">Sign up as:</span>
           
           <div onClick={() => handleSelect('user')} className="flex items-center cursor-pointer group">

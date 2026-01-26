@@ -6,30 +6,45 @@ import SelectionEntry from './pages/SelectionEntry';
 import ArticlePage from './pages/ArticlePage';
 import SignUp from './pages/SignUp'; 
 import Login from './pages/Login'; 
+import HomeDashboard from './pages/HomeDashboard'; 
+import ProductDashboard from './pages/ProductDashboard'; 
 
 function AppContent() {
   const location = useLocation();
   
-  // الهيدر والفوتر هيظهروا في المقالات وهيختفوا في الباقي
-  const isAuthPage = ['/login', '/signup', '/selection'].includes(location.pathname);
+  const noHeaderFooterPages = [
+    '/login', 
+    '/signup', 
+    '/selection', 
+    '/home-dashboard', 
+    '/product-dashboard' 
+  ];
+
+  const hideHeaderFooter = noHeaderFooterPages.includes(location.pathname);
 
   return (
-    <div className="min-h-screen flex flex-col">
-      {!isAuthPage && <Header />}
+    <div className="min-h-screen flex flex-col font-inter">
+      {/* الهيدر مش هيظهر في صفحات الدخول أو الداشبورد */}
+      {!hideHeaderFooter && <Header />}
       
       <main className="flex-grow">
         <Routes>
+          {/* Main Pages */}
           <Route path="/" element={<ArticlePage />} /> 
+          <Route path="/articles" element={<ArticlePage />} />
           
+          {/* Authentication */}
           <Route path="/selection" element={<SelectionEntry />} />
-          
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/articles" element={<ArticlePage />} />
+
+          {/* Dashboard */}
+          <Route path="/home-dashboard" element={<HomeDashboard />} />
+          <Route path="/product-dashboard" element={<ProductDashboard />} />
         </Routes>
       </main>
 
-      {!isAuthPage && <Footer />}
+      {!hideHeaderFooter && <Footer />}
     </div>
   );
 }

@@ -74,7 +74,6 @@
 
 // export default ArticlePage;
 
-
 import React from 'react';
 import ArticleCard from '../components/ArticleCard';
 import articleImg from '../assets/Article Image.png'; 
@@ -95,11 +94,12 @@ function ArticlePage() {
       <div className="max-w-[1440px] mx-auto px-5 md:px-10">
         
         <div className="flex flex-col items-center text-center">
-          {/* Reader's Choice Section */}
-          <h2 className="text-[20px] md:text-[28px] font-bold text-[#683A2F] uppercase tracking-[0.1em] md:tracking-[0.2em] mb-1">
+          {/* H3 - Reader's Choice Section - 28px Bold (700) */}
+          <h2 className="text-[22px] md:text-[28px] font-bold text-[#683A2F] uppercase tracking-[0.1em] md:tracking-[0.2em] mb-1">
             Reader's Choice
           </h2>
           
+          {/* Body - 18px Regular (400) */}
           <p className="text-[16px] md:text-[18px] font-normal text-[#4B4B4B] max-w-[850px] leading-relaxed mb-10 md:mb-16">
             This month's most popular article is: 
             <span className="font-semibold text-[#683A2F]"> "Why AI is the Best Tool for Predicting Wheat's Nitrogen Needs."</span>
@@ -107,7 +107,8 @@ function ArticlePage() {
 
           <div className="w-full max-w-[1000px] bg-[rgba(141,73,58,0.25)] rounded-[25px] md:rounded-[40px] overflow-hidden shadow-xl mb-20">
             <div className="py-3 md:py-4 text-center">
-               <span className="text-[18px] md:text-[22px] font-bold text-[#683A2F] uppercase tracking-widest">
+               {/* H4 Style used for Card Sub-headers - 24px Bold (700) */}
+               <span className="text-[18px] md:text-[24px] font-bold text-[#683A2F] uppercase tracking-widest">
                  Featured Today
                </span>
             </div>
@@ -121,10 +122,12 @@ function ArticlePage() {
             </div>
 
             <div className="p-6 md:p-8 flex flex-col items-center">
-              <p className="text-[18px] md:text-[22px] text-[#4B4B4B] font-medium mb-6 md:mb-8 max-w-[750px] leading-relaxed">
+              {/* Body Style - 18px Regular (400) - Note: Medium (500) used for emphasis but maintaining 18px */}
+              <p className="text-[16px] md:text-[18px] text-[#4B4B4B] font-medium mb-6 md:mb-8 max-w-[750px] leading-relaxed">
                 Learn easy ways to protect soil, save water, and grow sustainably.
               </p>
-              <button className="w-full md:w-auto bg-[#683A2F] text-white py-3 md:py-3.5 px-12 md:px-24 rounded-2xl font-bold text-[18px] md:text-[20px] shadow-lg hover:bg-[#522e25] transition-all">
+              {/* Navigation Style for Button - 18px Semi-Bold (600) */}
+              <button className="w-full md:w-auto bg-[#683A2F] text-white py-3 md:py-3.5 px-12 md:px-24 rounded-2xl font-semibold text-[18px] shadow-lg hover:bg-[#522e25] transition-all">
                 Read more
               </button>
             </div>
@@ -132,7 +135,8 @@ function ArticlePage() {
         </div>
 
         <div className="mb-10 md:mb-16 flex flex-col items-center w-full">
-            <h2 className="text-[32px] md:text-[48px] font-extrabold text-[#683A2F] relative inline-block mb-2 text-center">
+            {/* H2 - Articles Section - 48px Extra Bold (800) */}
+            <h2 className="text-[32px] md:text-[48px] font-[800] text-[#683A2F] relative inline-block mb-2 text-center">
               Articles
             </h2>
         </div>

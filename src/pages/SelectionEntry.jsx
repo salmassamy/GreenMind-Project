@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react'; 
 import { useNavigate } from 'react-router-dom';
 import authBg from '../assets/auth-bg.png';
 
@@ -6,10 +6,15 @@ const SelectionEntry = () => {
   const navigate = useNavigate();
   const [selectedRole, setSelectedRole] = useState(null);
 
+  useEffect(() => {
+    document.title = "Selection Entry";
+    window.scrollTo(0, 0); 
+
+  }, []);
+
   const handleSelect = (role) => {
     setSelectedRole(role);
     
-    // التعديل: توجيه الآدمن للوجن واليوزر للساين أب
     setTimeout(() => {
       if (role === 'admin') {
         navigate('/login', { state: { role } });
@@ -38,12 +43,10 @@ const SelectionEntry = () => {
           boxShadow: 'inset 0 4px 4px rgba(0, 0, 0, 0.25)', 
         }}
       >
-        {/* H1 - تم تعديله ليصبح 56px بوزن Extra Bold (900) حسب الجدول */}
         <h1 className="text-white text-[56px] font-[900] italic mb-12 text-center drop-shadow-md">
           Welcome
         </h1>
         
-        {/* نصوص الجسم - تم تعديلها لتصبح 18px بوزن Regular (400) حسب الجدول */}
         <div className="flex items-center justify-center space-x-10 text-white text-[18px] font-normal">
           <span className="opacity-90">Sign up as:</span>
           

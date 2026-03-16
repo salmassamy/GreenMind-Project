@@ -1,17 +1,12 @@
-
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; 
+import React, { useState } from 'react';
+import { useNavigate, Link, useLocation } from 'react-router-dom'; 
 import logo from '../assets/logo.png'; 
 import menuIcon from '../assets/Menu.png'; 
 
-const Header = () => {
+const Navbar = () => {
   const navigate = useNavigate(); 
-  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  const location = useLocation(); 
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
-
-  useEffect(() => {
-    setCurrentPath(window.location.pathname);
-  }, []);
 
   const links = [
     { name: 'Home', path: '/' },
@@ -22,26 +17,31 @@ const Header = () => {
     { name: 'FAQ', path: '/faq' },
   ];
 
-  const isActive = (path) => currentPath === path || currentPath === `${path}/`;
+  // Link Active?
+  const isActive = (path) => {
+    if (path === '/') {
+      return location.pathname === '/';
+    }
+    return location.pathname.startsWith(path);
+  };
 
-    //  18px Semi-Bold (600) 
   const linkStyles = "text-[18px] font-semibold text-[#683A2F] no-underline transition-all duration-300 tracking-widest cursor-pointer";
 
   return (
     <header className="bg-[#E3D1C8] sticky top-0 w-full z-50 shadow-sm font-inter">
       <div className="max-w-[1440px] mx-auto h-16 px-5 md:px-10 flex justify-between items-center relative">
         
-         {/* Logo  */}
+        {/* Logo */}
         <div className="flex items-center cursor-pointer" onClick={() => navigate('/')}>
           <img src={logo} alt="Logo" className="w-10 h-10 md:w-12 md:h-12 object-contain" />
         </div>
 
-        {/* Links 18px Semi-Bold (600) */}
+        {/* Links */}
         <nav className="hidden md:flex space-x-8">
           {links.map((link) => (
-            <a 
+            <Link 
               key={link.path}
-              href={link.path} 
+              to={link.path} 
               className={`${linkStyles} ${
                 isActive(link.path) 
                   ? 'opacity-100 border-b-2 border-[#683A2F] pb-1' 
@@ -49,7 +49,7 @@ const Header = () => {
               }`}
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -68,12 +68,12 @@ const Header = () => {
             }`}
           >
             <nav className="flex flex-col p-4 space-y-2">
-               {/* Links phone */}
                <div className="md:hidden flex flex-col space-y-2">
                  {links.map((link) => (
-                  <a
+                  <Link
                     key={link.path}
-                    href={link.path}
+                    to={link.path}
+                    onClick={() => setIsMenuOpen(false)}
                     className={`${linkStyles} py-2 px-3 rounded-lg hover:bg-[#683A2F]/10 ${
                       isActive(link.path) 
                         ? 'opacity-100 bg-[#683A2F]/10' 
@@ -81,22 +81,30 @@ const Header = () => {
                     }`}
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 ))}
                 <div className="h-[1px] bg-[#683A2F]/10 my-2"></div>
                </div>
         
                {/* Menu Options */}
-               <button className={`${linkStyles} py-2 px-3 text-left w-full hover:bg-[#683A2F]/10 opacity-80 hover:opacity-100`}>
+               <button 
+                onClick={() => { navigate('/profile'); setIsMenuOpen(false); }} 
+                className={`${linkStyles} py-2 px-3 text-left w-full hover:bg-[#683A2F]/10 ${isActive('/profile') ? 'opacity-100 bg-[#683A2F]/10' : 'opacity-80'}`}
+               >
                  Profile
                </button>
+
                <button 
                 onClick={() => { navigate('/selection'); setIsMenuOpen(false); }} 
-                className={`${linkStyles} py-2 px-3 text-left w-full hover:bg-[#683A2F]/10 opacity-80 hover:opacity-100`}
+                className={`${linkStyles} py-2 px-3 text-left w-full hover:bg-[#683A2F]/10 ${isActive('/selection') ? 'opacity-100 bg-[#683A2F]/10' : 'opacity-80'}`}
                >
                  Sign Up
                </button>
-               <button className={`${linkStyles} py-2 px-3 text-left w-full hover:bg-[#683A2F]/10 opacity-80 hover:opacity-100`}>
+
+               <button 
+                onClick={() => { setIsMenuOpen(false); }}
+                className={`${linkStyles} py-2 px-3 text-left w-full hover:bg-[#683A2F]/10 opacity-80 hover:opacity-100 text-red-700 md:text-[#683A2F]`}
+               >
                  Logout
                </button>
             </nav>
@@ -107,4 +115,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar; 
